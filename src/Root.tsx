@@ -2,6 +2,7 @@ import React from "react";
 import { Composition } from "remotion";
 import { Main } from "./Main";
 import { StyleDemo } from "./StyleDemo";
+import { AfpVideo, AFP_DURATION } from "./afp/AfpVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -18,6 +19,14 @@ export const RemotionRoot: React.FC = () => {
       id="StyleDemo"
       component={StyleDemo}
       durationInFrames={376}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="AfpBundling"
+      component={AfpVideo}
+      durationInFrames={AFP_DURATION}
       fps={30}
       width={1080}
       height={1920}

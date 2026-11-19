@@ -1,0 +1,787 @@
+[
+{
+"text": "Punya",
+"start": 0.061,
+"end": 0.22
+},
+{
+"text": "aset",
+"start": 0.294,
+"end": 0.517
+},
+{
+"text": "dua",
+"start": 0.592,
+"end": 0.703
+},
+{
+"text": "koma",
+"start": 0.741,
+"end": 0.889
+},
+{
+"text": "lima",
+"start": 0.964,
+"end": 1.113
+},
+{
+"text": "miliar…",
+"start": 1.187,
+"end": 1.836
+},
+{
+"text": "tanpa",
+"start": 1.926,
+"end": 2.224
+},
+{
+"text": "biaya?",
+"start": 2.298,
+"end": 2.933
+},
+{
+"text": "Kedengarannya",
+"start": 3.035,
+"end": 3.556
+},
+{
+"text": "scam,",
+"start": 3.668,
+"end": 3.966
+},
+{
+"text": "kan?",
+"start": 4.003,
+"end": 4.271
+},
+{
+"text": "Tenang.",
+"start": 4.545,
+"end": 5.084
+},
+{
+"text": "Ini",
+"start": 5.228,
+"end": 5.377
+},
+{
+"text": "bukan",
+"start": 5.452,
+"end": 5.6
+},
+{
+"text": "sulap,",
+"start": 5.675,
+"end": 6.172
+},
+{
+"text": "cuma",
+"start": 6.209,
+"end": 6.395
+},
+{
+"text": "hitungan",
+"start": 6.47,
+"end": 6.693
+},
+{
+"text": "sederhana:",
+"start": 6.73,
+"end": 7.498
+},
+{
+"text": "gabungan",
+"start": 7.547,
+"end": 7.87
+},
+{
+"text": "dua",
+"start": 7.945,
+"end": 8.056
+},
+{
+"text": "polis,",
+"start": 8.093,
+"end": 8.678
+},
+{
+"text": "New",
+"start": 8.752,
+"end": 8.901
+},
+{
+"text": "LLP",
+"start": 8.976,
+"end": 9.497
+},
+{
+"text": "dan",
+"start": 9.72,
+"end": 9.869
+},
+{
+"text": "AFP.",
+"start": 10.017,
+"end": 10.605
+},
+{
+"text": "Polis",
+"start": 10.786,
+"end": 10.95
+},
+{
+"text": "pertama,",
+"start": 11.024,
+"end": 11.545
+},
+{
+"text": "New",
+"start": 11.694,
+"end": 11.843
+},
+{
+"text": "LLP.",
+"start": 11.992,
+"end": 12.513
+},
+{
+"text": "Bayar",
+"start": 12.705,
+"end": 12.929
+},
+{
+"text": "premi",
+"start": 13.003,
+"end": 13.301
+},
+{
+"text": "cuma",
+"start": 13.375,
+"end": 13.524
+},
+{
+"text": "lima",
+"start": 13.598,
+"end": 13.747
+},
+{
+"text": "tahun,",
+"start": 13.822,
+"end": 14.417
+},
+{
+"text": "tapi",
+"start": 14.517,
+"end": 14.715
+},
+{
+"text": "melindungi",
+"start": 14.789,
+"end": 15.161
+},
+{
+"text": "jiwa",
+"start": 15.236,
+"end": 15.459
+},
+{
+"text": "sampai",
+"start": 15.533,
+"end": 15.794
+},
+{
+"text": "usia",
+"start": 15.831,
+"end": 16.054
+},
+{
+"text": "seratus,",
+"start": 16.129,
+"end": 16.887
+},
+{
+"text": "dengan",
+"start": 16.961,
+"end": 17.11
+},
+{
+"text": "uang",
+"start": 17.185,
+"end": 17.259
+},
+{
+"text": "pertanggungan",
+"start": 17.333,
+"end": 17.929
+},
+{
+"text": "dua",
+"start": 18.078,
+"end": 18.226
+},
+{
+"text": "koma",
+"start": 18.375,
+"end": 18.45
+},
+{
+"text": "lima",
+"start": 18.524,
+"end": 18.71
+},
+{
+"text": "miliar.",
+"start": 18.747,
+"end": 19.267
+},
+{
+"text": "Polis",
+"start": 19.39,
+"end": 19.49
+},
+{
+"text": "kedua,",
+"start": 19.564,
+"end": 20.051
+},
+{
+"text": "AFP.",
+"start": 20.2,
+"end": 20.721
+},
+{
+"text": "Juga",
+"start": 20.969,
+"end": 21.192
+},
+{
+"text": "bayar",
+"start": 21.267,
+"end": 21.416
+},
+{
+"text": "lima",
+"start": 21.49,
+"end": 21.639
+},
+{
+"text": "tahun.",
+"start": 21.713,
+"end": 22.208
+},
+{
+"text": "Di",
+"start": 22.246,
+"end": 22.283
+},
+{
+"text": "tahun",
+"start": 22.357,
+"end": 22.506
+},
+{
+"text": "kelima",
+"start": 22.581,
+"end": 22.804
+},
+{
+"text": "belas",
+"start": 22.878,
+"end": 23.101
+},
+{
+"text": "cair",
+"start": 23.325,
+"end": 23.622
+},
+{
+"text": "tiga",
+"start": 23.697,
+"end": 23.846
+},
+{
+"text": "ratus",
+"start": 23.92,
+"end": 24.143
+},
+{
+"text": "dua",
+"start": 24.292,
+"end": 24.404
+},
+{
+"text": "puluh",
+"start": 24.441,
+"end": 24.553
+},
+{
+"text": "lima",
+"start": 24.59,
+"end": 24.813
+},
+{
+"text": "juta.",
+"start": 24.888,
+"end": 25.35
+},
+{
+"text": "Di",
+"start": 25.441,
+"end": 25.515
+},
+{
+"text": "tahun",
+"start": 25.59,
+"end": 25.739
+},
+{
+"text": "kedua",
+"start": 25.813,
+"end": 25.962
+},
+{
+"text": "puluh",
+"start": 26.036,
+"end": 26.21
+},
+{
+"text": "lima,",
+"start": 26.26,
+"end": 26.606
+},
+{
+"text": "cair",
+"start": 26.706,
+"end": 26.929
+},
+{
+"text": "lagi",
+"start": 27.004,
+"end": 27.227
+},
+{
+"text": "tiga",
+"start": 27.301,
+"end": 27.376
+},
+{
+"text": "ratus",
+"start": 27.45,
+"end": 27.673
+},
+{
+"text": "dua",
+"start": 27.748,
+"end": 27.86
+},
+{
+"text": "puluh",
+"start": 27.897,
+"end": 28.008
+},
+{
+"text": "lima",
+"start": 28.046,
+"end": 28.194
+},
+{
+"text": "juta.",
+"start": 28.269,
+"end": 28.637
+},
+{
+"text": "Sekarang",
+"start": 28.837,
+"end": 29.06
+},
+{
+"text": "hitung.",
+"start": 29.134,
+"end": 29.489
+},
+{
+"text": "Total",
+"start": 29.603,
+"end": 29.826
+},
+{
+"text": "modal",
+"start": 29.9,
+"end": 30.124
+},
+{
+"text": "lima",
+"start": 30.198,
+"end": 30.31
+},
+{
+"text": "tahun:",
+"start": 30.347,
+"end": 30.868
+},
+{
+"text": "enam",
+"start": 30.905,
+"end": 31.017
+},
+{
+"text": "ratus",
+"start": 31.165,
+"end": 31.389
+},
+{
+"text": "empat",
+"start": 31.538,
+"end": 31.761
+},
+{
+"text": "puluh",
+"start": 31.835,
+"end": 31.947
+},
+{
+"text": "empat",
+"start": 31.984,
+"end": 32.133
+},
+{
+"text": "juta.",
+"start": 32.207,
+"end": 32.72
+},
+{
+"text": "Yang",
+"start": 32.795,
+"end": 32.869
+},
+{
+"text": "balik",
+"start": 32.944,
+"end": 33.092
+},
+{
+"text": "dari",
+"start": 33.167,
+"end": 33.316
+},
+{
+"text": "AFP:",
+"start": 33.39,
+"end": 34.06
+},
+{
+"text": "enam",
+"start": 34.134,
+"end": 34.283
+},
+{
+"text": "ratus",
+"start": 34.358,
+"end": 34.655
+},
+{
+"text": "lima",
+"start": 34.804,
+"end": 34.953
+},
+{
+"text": "puluh",
+"start": 35.027,
+"end": 35.176
+},
+{
+"text": "juta.",
+"start": 35.251,
+"end": 35.727
+},
+{
+"text": "Modal",
+"start": 35.801,
+"end": 36.024
+},
+{
+"text": "balik",
+"start": 36.099,
+"end": 36.248
+},
+{
+"text": "semua,",
+"start": 36.322,
+"end": 36.917
+},
+{
+"text": "plus",
+"start": 37.029,
+"end": 37.141
+},
+{
+"text": "lebih",
+"start": 37.215,
+"end": 37.513
+},
+{
+"text": "lima",
+"start": 37.587,
+"end": 37.81
+},
+{
+"text": "koma",
+"start": 37.885,
+"end": 38.034
+},
+{
+"text": "delapan",
+"start": 38.108,
+"end": 38.257
+},
+{
+"text": "juta.",
+"start": 38.406,
+"end": 38.728
+},
+{
+"text": "Artinya,",
+"start": 39.006,
+"end": 39.639
+},
+{
+"text": "New",
+"start": 39.788,
+"end": 39.936
+},
+{
+"text": "LLP",
+"start": 40.011,
+"end": 40.383
+},
+{
+"text": "dua",
+"start": 40.457,
+"end": 40.606
+},
+{
+"text": "koma",
+"start": 40.681,
+"end": 40.755
+},
+{
+"text": "lima",
+"start": 40.904,
+"end": 41.053
+},
+{
+"text": "miliar",
+"start": 41.127,
+"end": 41.425
+},
+{
+"text": "yang",
+"start": 41.499,
+"end": 41.574
+},
+{
+"text": "cair",
+"start": 41.648,
+"end": 41.871
+},
+{
+"text": "di",
+"start": 41.946,
+"end": 42.02
+},
+{
+"text": "usia",
+"start": 42.094,
+"end": 42.243
+},
+{
+"text": "seratus…",
+"start": 42.318,
+"end": 43.099
+},
+{
+"text": "praktis",
+"start": 43.136,
+"end": 43.546
+},
+{
+"text": "GRATIS.",
+"start": 43.62,
+"end": 44.41
+},
+{
+"text": "Dan",
+"start": 44.669,
+"end": 44.699
+},
+{
+"text": "kalau",
+"start": 44.773,
+"end": 44.922
+},
+{
+"text": "terjadi",
+"start": 44.997,
+"end": 45.294
+},
+{
+"text": "risiko,",
+"start": 45.406,
+"end": 46.113
+},
+{
+"text": "ahli",
+"start": 46.187,
+"end": 46.336
+},
+{
+"text": "waris",
+"start": 46.411,
+"end": 46.634
+},
+{
+"text": "menerima",
+"start": 46.708,
+"end": 47.08
+},
+{
+"text": "hingga",
+"start": 47.155,
+"end": 47.378
+},
+{
+"text": "tiga",
+"start": 47.527,
+"end": 47.75
+},
+{
+"text": "koma",
+"start": 47.825,
+"end": 47.973
+},
+{
+"text": "empat",
+"start": 48.048,
+"end": 48.271
+},
+{
+"text": "miliar",
+"start": 48.345,
+"end": 48.643
+},
+{
+"text": "lebih.",
+"start": 48.718,
+"end": 49.09
+},
+{
+"text": "Apa",
+"start": 49.272,
+"end": 49.421
+},
+{
+"text": "pun",
+"start": 49.495,
+"end": 49.57
+},
+{
+"text": "yang",
+"start": 49.644,
+"end": 49.718
+},
+{
+"text": "terjadi,",
+"start": 49.793,
+"end": 50.368
+},
+{
+"text": "keluarga",
+"start": 50.443,
+"end": 50.889
+},
+{
+"text": "tetap",
+"start": 51.038,
+"end": 51.336
+},
+{
+"text": "menang.",
+"start": 51.41,
+"end": 51.784
+},
+{
+"text": "Valid",
+"start": 52.202,
+"end": 52.276
+},
+{
+"text": "atau",
+"start": 52.448,
+"end": 52.671
+},
+{
+"text": "scam?",
+"start": 52.745,
+"end": 53.043
+},
+{
+"text": "Tulis",
+"start": 53.22,
+"end": 53.444
+},
+{
+"text": "di",
+"start": 53.481,
+"end": 53.518
+},
+{
+"text": "komentar.",
+"start": 53.555,
+"end": 54.021
+},
+{
+"text": "Atau",
+"start": 54.173,
+"end": 54.397
+},
+{
+"text": "hubungi",
+"start": 54.471,
+"end": 54.769
+},
+{
+"text": "Raymon",
+"start": 54.843,
+"end": 55.141
+},
+{
+"text": "untuk",
+"start": 55.215,
+"end": 55.364
+},
+{
+"text": "ilustrasi",
+"start": 55.439,
+"end": 55.885
+},
+{
+"text": "resmi",
+"start": 55.997,
+"end": 56.183
+},
+{
+"text": "sesuai",
+"start": 56.257,
+"end": 56.629
+},
+{
+"text": "usia",
+"start": 56.704,
+"end": 56.927
+},
+{
+"text": "Anda.",
+"start": 57.039,
+"end": 57.448
+}
+]

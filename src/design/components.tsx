@@ -6,7 +6,15 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { COLORS, EASE, FONT, SPRING, TIMING } from "./tokens";
+import { COLORS as DEFAULT_COLORS, EASE, FONT, Palette, SPRING, TIMING } from "./tokens";
+
+/* Tema: bungkus video dengan <ThemeProvider palette={GOLD}> untuk ganti warna */
+const ThemeCtx = React.createContext<Palette>(DEFAULT_COLORS);
+export const ThemeProvider: React.FC<{ palette: Palette; children: React.ReactNode }> = ({
+  palette,
+  children,
+}) => <ThemeCtx.Provider value={palette}>{children}</ThemeCtx.Provider>;
+export const useTheme = () => React.useContext(ThemeCtx);
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -16,6 +24,7 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 export const Background: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
+  const COLORS = useTheme();
   const frame = useCurrentFrame();
   const drift = interpolate(frame, [0, 900], [0, -240]); // sinar bergerak pelan
   const streak = (left: number, width: number, opacity: number) => (
@@ -73,6 +82,8 @@ export type Word = {
   dy?: number;
   /** pindah ke baris baru sebelum kata ini */
   br?: boolean;
+  /** frame muncul (relatif ke Sequence). Jika diisi, mengabaikan stagger -> untuk sinkron VO */
+  at?: number;
 };
 
 export const Caption: React.FC<{
@@ -82,6 +93,7 @@ export const Caption: React.FC<{
   align?: "left" | "center";
   style?: React.CSSProperties;
 }> = ({ words, startFrame = 0, stagger = TIMING.wordStagger, align = "center", style }) => {
+  const COLORS = useTheme();
   const frame = useCurrentFrame();
   const lines: Word[][] = [[]];
   words.forEach((w) => {
@@ -107,7 +119,7 @@ export const Caption: React.FC<{
         <div key={li} style={{ display: "flex", alignItems: "baseline", flexWrap: "wrap", justifyContent: align === "center" ? "center" : "flex-start" }}>
           {line.map((w) => {
             i++;
-            const t0 = startFrame + i * stagger;
+            const t0 = w.at ?? startFrame + i * stagger;
             const p = interpolate(frame, [t0, t0 + TIMING.wordIn], [0, 1], {
               ...clamp,
               easing: EASE.out,
@@ -166,6 +178,7 @@ export const GlassCard: React.FC<{
   grid?: boolean;
   children?: React.ReactNode;
 }> = ({ width, height, startFrame = 0, grid = true, children }) => {
+  const COLORS = useTheme();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const pop = spring({ frame: frame - startFrame, fps, config: SPRING.soft });
@@ -225,8 +238,12 @@ export const Counter: React.FC<{
   duration?: number;
   prefix?: string;
   suffix?: string;
+  /** jumlah desimal (mis. 1 untuk "2,5") */
+  decimals?: number;
+  /** "id-ID" -> 644.170.000 ; "en-US" -> 644,170,000 */
+  locale?: string;
   style?: React.CSSProperties;
-}> = ({ from, to, startFrame = 0, duration = TIMING.counter, prefix = "", suffix = "", style }) => {
+}> = ({ from, to, startFrame = 0, duration = TIMING.counter, prefix = "", suffix = "", decimals = 0, locale = "en-US", style }) => {
   const frame = useCurrentFrame();
   const v = interpolate(frame, [startFrame, startFrame + duration], [from, to], {
     ...clamp,
@@ -235,7 +252,7 @@ export const Counter: React.FC<{
   return (
     <span style={{ fontFamily: FONT.family, fontVariantNumeric: "tabular-nums", ...style }}>
       {prefix}
-      {Math.round(v).toLocaleString("en-US")}
+      {v.toLocaleString(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}
       {suffix}
     </span>
   );
@@ -250,6 +267,7 @@ export const RadialProgress: React.FC<{
   startFrame?: number;
   duration?: number;
 }> = ({ to, size = 260, startFrame = 0, duration = TIMING.counter }) => {
+  const COLORS = useTheme();
   const frame = useCurrentFrame();
   const p = interpolate(frame, [startFrame, startFrame + duration], [0, to / 100], {
     ...clamp,
@@ -281,6 +299,7 @@ export const HeroText: React.FC<{ children: React.ReactNode; startFrame?: number
   children,
   startFrame = 0,
 }) => {
+  const COLORS = useTheme();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({ frame: frame - startFrame, fps, config: SPRING.pop });

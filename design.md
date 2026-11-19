@@ -222,3 +222,23 @@ Aturan overlap: scene berikutnya mulai `exitFrames` frame sebelum scene sebelumn
 | Produk digital | "Bayangkan kerja 2 jam sehari…" | **Template** | 90% lebih cepat |
 
 > Untuk Livya Kitchen, warna `blue` bisa diganti dengan warna brand (misalnya oranye) cukup di `tokens.ts`. Seluruh gaya lain tetap sama.
+
+---
+
+## 12. Tema warna dan sinkron VO (tambahan)
+
+**Ganti tema** tanpa mengubah komponen:
+```tsx
+import { ThemeProvider } from "./design/components";
+import { GOLD } from "./design/tokens";
+<ThemeProvider palette={GOLD}>...</ThemeProvider>
+```
+Palet `GOLD` (brand Raymon / AXA): background `#010A16` / navy `#021D3C`, aksen emas `#D4A23A`, highlight `#F5DC9A`, teks krem `#FAFAF5`. Key `blue*` berarti "warna aksen".
+
+**Sinkron kata dengan VO:** setiap `Word` bisa diberi `at` (frame). Alur yang dipakai di `src/afp/`:
+1. Buat VO di ElevenLabs → transkripsi (Scribe) untuk timestamp per kata.
+2. Rapatkan jeda dan sesuaikan tempo dengan ffmpeg; timestamp ikut dipetakan → `vo-words.json`.
+3. Di scene: `cap(from, [["Rp 2,5 M", 43, "accent"]])` → kata muncul tepat saat kata ke-43 diucapkan.
+4. SFX ditaruh di frame `at(i)` (pop, ding, impact) dan `batas_scene - OV - 3` (whoosh).
+
+SFX dan musik dibuat oleh `scripts/make_audio.py` (sintesis lokal, bebas royalti).

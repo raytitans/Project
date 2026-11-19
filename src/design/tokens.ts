@@ -28,7 +28,33 @@ export const COLORS = {
   glassStroke: "rgba(255,255,255,0.85)",
   glassFill: "rgba(10,14,28,0.55)",
   grid: "rgba(255,255,255,0.08)",
-} as const;
+};
+
+export type Palette = { [K in keyof typeof COLORS]: string };
+
+/**
+ * Palet "Navy Gold": versi gelap dari brand Raymon / AXA
+ * (navy #021D3C, emas #CB9A34, krem #FAFAF5).
+ * Nama key sama dengan COLORS supaya semua komponen langsung bisa pakai:
+ * `blue*` = warna aksen (di sini emas).
+ */
+export const GOLD: Palette = {
+  black: "#010A16",
+  navy900: "#021D3C",
+  navy800: "#06264C",
+  navy700: "#0A2F5C",
+  navy600: "#123C72",
+  blue: "#D4A23A", // aksen emas utama (teks aksen, angka hero)
+  blueBright: "#E8BE5A", // ikon, garis progres
+  blueHighlight: "#F5DC9A", // rim light, label
+  blueDeep: "#1A4B8C", // sinar & glow navy di background/kartu
+  blueGlow: "#8A6418", // emas gelap untuk gradasi
+  white: "#FAFAF5", // krem brand
+  gray: "#A8B0BE",
+  glassStroke: "rgba(255,255,255,0.85)",
+  glassFill: "rgba(4,18,40,0.6)",
+  grid: "rgba(255,255,255,0.07)",
+};
 
 export const FONT = {
   family: "Poppins, sans-serif",
