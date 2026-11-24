@@ -23,4 +23,4 @@ Sumber angka:
 [Penutup] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang.
 
 ## Disclaimer di layar
-Ilustrasi untuk edukasi, pria usia 30 tahun, bukan penawaran resmi. Premi dan manfaat dapat berubah sesuai ketentuan polis. Produk asuransi PT AXA Financial Indonesia, berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK).
+Ilustrasi, bukan penawaran resmi. Ketentuan sesuai polis. AXA berizin & diawasi OJK.
