@@ -23,4 +23,4 @@ Sumber angka:
 [Penutup] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang.
 
 ## Disclaimer di layar
-Ilustrasi, bukan penawaran resmi. Ketentuan sesuai polis. AXA berizin & diawasi OJK.
+Ilustrasi by Raymon, ketentuan sesuai Polis, AXA berizin & diawasi OJK.

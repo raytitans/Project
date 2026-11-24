@@ -149,7 +149,7 @@ const Disclaimer: React.FC<{ dark: boolean }> = ({ dark }) => (
       color: dark ? "rgba(255,255,255,0.62)" : C.mutedGrey,
     }}
   >
-    Ilustrasi, bukan penawaran resmi. Ketentuan sesuai polis. AXA berizin & diawasi OJK.
+    Ilustrasi by Raymon, ketentuan sesuai Polis, AXA berizin & diawasi OJK.
   </div>
 );
 
