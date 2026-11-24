@@ -1,4 +1,4 @@
-# Naskah VO: "Premi Kesehatan di Masa Pensiun" (60 detik, draft 4)
+# Naskah VO: "Premi Kesehatan di Masa Pensiun" (60 detik, draft 5)
 
 Desain: design_1.md ("Crimson Brand Reel"), 1080×1920, 30 fps. Nada tenang, tempo diperlambat.
 Sumber angka:
@@ -12,15 +12,19 @@ Sumber angka:
 
 ## Teks VO (untuk ElevenLabs)
 
-[Hook] Tahukah kamu, berapa total biaya asuransi kesehatan, dari usia tiga puluh, sampai delapan puluh empat tahun?
+[Hook] Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?
 
-[Inti 1] Sekitar dua miliar rupiah. Dari usia tiga puluh sampai enam puluh empat, totalnya sekitar lima ratus enam puluh juta. Tapi dari usia enam puluh lima sampai delapan puluh empat, totalnya hampir satu koma lima miliar. Berarti, hampir tujuh puluh lima persen biaya, justru ada di usia pensiun kita.
+[Inti 1] Sekitar dua miliar. Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta. Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar. Hampir tujuh puluh lima persen, justru di usia pensiun.
 
-[Inti 2] Bagaimana kalau biaya itu, disiapkan sejak sekarang? Sisihkan sekitar sepuluh juta sebulan, selama lima tahun. Di usia enam puluh lima, cair dua koma satu miliar. Cukup untuk mengembalikan semua premi polis, dan membayar biaya kesehatan, sampai usia delapan puluh empat.
+[Inti 2] Bagaimana kalau disiapkan sejak sekarang? Sisihkan sekitar sepuluh juta sebulan, selama lima tahun. Di usia enam puluh lima, cair dua koma satu miliar. Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.
 
 [Inti 3] Dan selama itu, kamu tetap punya proteksi jiwa.
 
-[Penutup] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang.
+[Penutup + CTA] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang. Komen, HITUNG, atau hubungi Raymon.
+
+## CTA di outro
+- Tombol "Komen HITUNG" diklik tepat saat VO mengucapkan "HITUNG".
+- Kartu "RAYMON · 0812 8909 0202" muncul saat "Raymon" diucapkan, tetap di layar ±5 detik sampai video selesai.
 
 ## Disclaimer di layar
 Ilustrasi by Raymon, ketentuan sesuai Polis, AXA berizin & diawasi OJK.
