@@ -1,4 +1,4 @@
-# Naskah VO: "Premi Kesehatan di Masa Pensiun" (60 detik, draft 5)
+# Naskah VO: "Premi Kesehatan di Masa Pensiun" (75 detik, draft 5)
 
 Desain: design_1.md ("Crimson Brand Reel"), 1080×1920, 30 fps. Nada tenang, tempo diperlambat.
 Sumber angka:
@@ -24,7 +24,7 @@ Sumber angka:
 
 ## CTA di outro
 - Tombol "Komen HITUNG" diklik tepat saat VO mengucapkan "HITUNG".
-- Kartu "RAYMON · 0812 8909 0202" muncul saat "Raymon" diucapkan, tetap di layar ±5 detik sampai video selesai.
+- Kartu "RAYMON · 0812 8909 0202" muncul saat "Raymon" diucapkan, tetap di layar ±7 detik sampai video selesai (video 75 detik).
 
 ## Disclaimer di layar
 Ilustrasi by Raymon, ketentuan sesuai Polis, AXA berizin & diawasi OJK.

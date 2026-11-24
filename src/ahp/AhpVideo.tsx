@@ -19,9 +19,9 @@ import { FPS, HAS_REAL_VO, pend, w } from "./vo";
 /* ------------------------------------------------------------------ */
 /* Durasi & batas scene                                                 */
 /* ------------------------------------------------------------------ */
-// durasi = saat "Raymon" diucapkan + 5 dtk kartu CTA, dibulatkan ke atas (maks 60 dtk)
-export const CTA_HOLD = 5; // kartu RAYMON tetap di layar ±5 dtk setelah nama disebut
-export const AHP_DURATION = Math.min(60, Math.ceil(w(12, 4) / FPS + CTA_HOLD)) * FPS;
+// Durasi tetap 75 dtk (keputusan user): kartu RAYMON muncul saat nama disebut dan bertahan ±7 dtk sampai akhir
+export const AHP_DURATION = 75 * FPS;
+export const CTA_HOLD_SEC = (AHP_DURATION - w(12, 4)) / FPS;
 
 type Tr = "zoom" | "tilt" | "wave" | "panel";
 const OV = 14; // panjang transisi (frame), sedikit lebih lambat dari referensi agar terasa tenang
@@ -570,11 +570,6 @@ const S5: React.FC = () => {
           <Center top={1290} gap={0}>
             <Line color={C.white} words={[["selama", w(6, 5)], ["5 tahun", w(6, 6), "italic"]]} />
           </Center>
-          <FadeUp at={w(6, 7) + 8} style={{ position: "absolute", left: 0, right: 0, top: 1450, textAlign: "center" }}>
-            <div style={{ fontFamily: FONT, fontSize: 34, fontWeight: 500, color: C.white, opacity: 0.85 }}>
-              Total premi ±Rp603,5 jt
-            </div>
-          </FadeUp>
         </>
       )}
     </>
@@ -731,11 +726,6 @@ const S7: React.FC = () => {
       </div>
       <Center top={1170} gap={10}>
         <Line color={C.white} words={[["proteksi jiwa", w(9, 6), "italic"]]} style={{ transform: "scale(1.35)" }} />
-        <FadeUp at={w(9, 7) + 6}>
-          <div style={{ marginTop: 40, fontFamily: FONT, fontSize: 34, fontWeight: 500, color: C.white, opacity: 0.85, textAlign: "center" }}>
-            Manfaat meninggal dunia Rp2,1 M – Rp3,15 M
-          </div>
-        </FadeUp>
       </Center>
     </>
   );
