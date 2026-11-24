@@ -23,4 +23,4 @@ Sumber angka:
 [Penutup] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang.
 
 ## Disclaimer di layar
-Ilustrasi: pria 30 th, premi kesehatan usia 30–84 · AXA Health Protector Premium (premi tanpa diskon, tabel per 15 Sep 2026) · AXA Future Protector UP Rp2,1 M. Bukan penawaran resmi. Premi kesehatan dapat berubah. Nilai aktual sesuai ketentuan polis.
+Ilustrasi untuk edukasi, pria usia 30 tahun, bukan penawaran resmi. Premi dan manfaat dapat berubah sesuai ketentuan polis. Produk asuransi PT AXA Financial Indonesia, berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK).
