@@ -7,18 +7,19 @@ export const FPS = 30;
 
 // [teks, mulai (dtk), selesai (dtk)]
 export const PHRASES: [string, number, number][] = [
-  ["Tahukah kamu, berapa total biaya asuransi kesehatan, dari usia tiga puluh, sampai delapan puluh empat tahun?", 1.0, 7.4], // P0
-  ["Sekitar dua miliar rupiah.", 8.3, 10.0], // P1
-  ["Dari usia tiga puluh sampai enam puluh empat, totalnya sekitar lima ratus enam puluh juta.", 10.9, 16.6], // P2
-  ["Tapi dari usia enam puluh lima sampai delapan puluh empat, totalnya hampir satu koma lima miliar.", 17.4, 23.6], // P3
-  ["Berarti, hampir tujuh puluh lima persen biaya, justru ada di usia pensiun kita.", 24.5, 29.3], // P4
-  ["Bagaimana kalau biaya itu, disiapkan sejak sekarang?", 30.3, 33.0], // P5
-  ["Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.", 33.6, 36.7], // P6
-  ["Di usia enam puluh lima, cair dua koma satu miliar.", 37.4, 40.5], // P7
-  ["Cukup untuk mengembalikan semua premi polis, dan membayar biaya kesehatan, sampai usia delapan puluh empat.", 41.1, 46.9], // P8
-  ["Dan selama itu, kamu tetap punya proteksi jiwa.", 47.7, 50.5], // P9
-  ["Pensiun tenang, tanpa jadi beban.", 51.5, 53.5], // P10
-  ["Mulai siapkan dari sekarang.", 54.1, 56.3], // P11
+  ["Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?", 1.0, 6.6], // P0
+  ["Sekitar dua miliar.", 7.4, 8.8], // P1
+  ["Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta.", 9.5, 14.6], // P2
+  ["Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar.", 15.3, 20.8], // P3
+  ["Hampir tujuh puluh lima persen, justru di usia pensiun.", 21.6, 25.4], // P4
+  ["Bagaimana kalau disiapkan sejak sekarang?", 26.3, 28.5], // P5
+  ["Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.", 29.1, 32.2], // P6
+  ["Di usia enam puluh lima, cair dua koma satu miliar.", 32.9, 36.0], // P7
+  ["Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.", 36.6, 42.0], // P8
+  ["Dan selama itu, kamu tetap punya proteksi jiwa.", 42.8, 45.6], // P9
+  ["Pensiun tenang, tanpa jadi beban.", 46.5, 48.5], // P10
+  ["Mulai siapkan dari sekarang.", 49.0, 50.8], // P11
+  ["Komen, HITUNG, atau hubungi Raymon.", 51.4, 53.6], // P12 (CTA)
 ];
 
 export type VoWord = { word: string; start: number; end: number; p: number; k: number };

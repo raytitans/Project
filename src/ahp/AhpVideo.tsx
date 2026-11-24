@@ -19,8 +19,9 @@ import { FPS, HAS_REAL_VO, pend, w } from "./vo";
 /* ------------------------------------------------------------------ */
 /* Durasi & batas scene                                                 */
 /* ------------------------------------------------------------------ */
-// design_1/skill: durasi = akhir VO + ±1,5 dtk penutup, dibulatkan ke atas ke detik penuh (maks 60 dtk)
-export const AHP_DURATION = Math.min(60, Math.ceil(pend(11) / FPS + 1.6)) * FPS;
+// durasi = saat "Raymon" diucapkan + 5 dtk kartu CTA, dibulatkan ke atas (maks 60 dtk)
+export const CTA_HOLD = 5; // kartu RAYMON tetap di layar ±5 dtk setelah nama disebut
+export const AHP_DURATION = Math.min(60, Math.ceil(w(12, 4) / FPS + CTA_HOLD)) * FPS;
 
 type Tr = "zoom" | "tilt" | "wave" | "panel";
 const OV = 14; // panjang transisi (frame), sedikit lebih lambat dari referensi agar terasa tenang
@@ -182,8 +183,8 @@ const S1: React.FC = () => {
   const lineStart = w(0, 7);
   const lineEnd = w(0, 14);
   const draw = interpolate(f, [lineStart, lineEnd], [0, 1], { ...clamp, easing: E.snapOut });
-  const q = usePop(w(0, 15));
-  const pulse = 1 + 0.03 * Math.sin((f - w(0, 15)) / 6);
+  const q = usePop(w(0, 14));
+  const pulse = 1 + 0.03 * Math.sin((f - w(0, 14)) / 6);
   return (
     <>
       <Center top={420} gap={10}>
@@ -198,7 +199,7 @@ const S1: React.FC = () => {
           color={C.white}
           words={[
             ["Berapa", w(0, 2)],
-            ["total biaya", w(0, 3)],
+            ["total premi", w(0, 3)],
           ]}
         />
         <HighlightPill text="asuransi kesehatan" at={w(0, 5)} clickAt={w(0, 6) + 4} size={78} />
@@ -290,7 +291,7 @@ const S2: React.FC = () => (
         <span style={{ fontSize: 120 }}> M</span>
       </div>
     </Pop>
-    <FadeUp at={w(1, 3)}>
+    <FadeUp at={w(1, 2)}>
       <div style={{ fontFamily: FONT, fontSize: 52, fontWeight: 700, fontStyle: "italic", color: C.brandRed }}>usia 30 – 84 tahun</div>
     </FadeUp>
   </Center>
@@ -383,16 +384,16 @@ const S3: React.FC = () => {
             out={swap}
             style={{ position: "absolute", left: 0, right: 0, top: 0 }}
             words={[
-              ["Usia", w(2, 1)],
-              ["30 – 64", w(2, 2), "bold"],
+              ["Usia", w(2, 0)],
+              ["30 – 64", w(2, 1), "bold"],
             ]}
           />
           <Line
             color={C.white}
             style={{ position: "absolute", left: 0, right: 0, top: 0 }}
             words={[
-              ["Usia", w(3, 2)],
-              ["65 – 84", w(3, 3), "italic"],
+              ["Usia", w(3, 1)],
+              ["65 – 84", w(3, 2), "italic"],
             ]}
           />
         </div>
@@ -400,19 +401,19 @@ const S3: React.FC = () => {
       <Bar
         x={150}
         h={h1}
-        at={w(2, 8)}
-        valAt={w(2, 9)}
+        at={w(2, 7)}
+        valAt={w(2, 8)}
         label="usia 30–64"
-        value={<Counter to={558.9} dec={1} at={w(2, 9)} dur={26} prefix="Rp" suffix=" jt" />}
+        value={<Counter to={558.9} dec={1} at={w(2, 8)} dur={26} prefix="Rp" suffix=" jt" />}
       />
       <Bar
         x={600}
         h={hMax}
-        at={w(3, 10)}
-        valAt={w(3, 11)}
+        at={w(3, 9)}
+        valAt={w(3, 10)}
         strong
         label="usia 65–84"
-        value={<Counter to={1.48} dec={2} at={w(3, 11)} dur={30} prefix="Rp" suffix=" M" />}
+        value={<Counter to={1.48} dec={2} at={w(3, 10)} dur={30} prefix="Rp" suffix=" M" />}
       />
       <div
         style={{
@@ -425,7 +426,7 @@ const S3: React.FC = () => {
           fontSize: 34,
           fontWeight: 500,
           color: C.white,
-          opacity: interpolate(f, [w(3, 7), w(3, 7) + 12], [0, 0.9], clamp),
+          opacity: interpolate(f, [w(3, 6), w(3, 6) + 12], [0, 0.9], clamp),
         }}
       >
         Premi/tahun: Rp38,4 jt → Rp118 jt
@@ -441,7 +442,7 @@ const S4: React.FC = () => {
   const f = useCurrentFrame();
   const R = 250;
   const L = 2 * Math.PI * R;
-  const p = interpolate(f, [w(4, 1), w(4, 1) + 40], [0, 0.726], { ...clamp, easing: E.snapOut });
+  const p = interpolate(f, [w(4, 0), w(4, 0) + 40], [0, 0.726], { ...clamp, easing: E.snapOut });
   return (
     <>
       <Center top={330} gap={0}>
@@ -449,8 +450,8 @@ const S4: React.FC = () => {
           color={C.brandRed}
           accent={C.brandRed}
           words={[
-            ["Hampir", w(4, 1)],
-            ["¾ biaya", w(4, 2), "bold"],
+            ["Hampir", w(4, 0)],
+            ["¾ biaya", w(4, 1), "bold"],
           ]}
         />
       </Center>
@@ -481,15 +482,15 @@ const S4: React.FC = () => {
             }}
           >
             <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 150, color: C.brandRed, letterSpacing: "-0.03em" }}>
-              <Counter to={72.6} dec={1} at={w(4, 1)} dur={40} suffix="%" />
+              <Counter to={72.6} dec={1} at={w(4, 0)} dur={40} suffix="%" />
             </div>
             <div style={{ fontFamily: FONT, fontSize: 36, fontWeight: 500, color: C.charcoal }}>usia 65–84</div>
           </div>
         </Pop>
       </div>
       <Center top={1230} gap={4}>
-        <Line color={C.brandRed} words={[["justru ada di", w(4, 7)]]} />
-        <Line color={C.brandRed} accent={C.brandRed} words={[["usia pensiun", w(4, 10), "italic"]]} style={{ transform: "scale(1.25)" }} />
+        <Line color={C.brandRed} words={[["justru di", w(4, 5)]]} />
+        <Line color={C.brandRed} accent={C.brandRed} words={[["usia pensiun", w(4, 7), "italic"]]} style={{ transform: "scale(1.25)" }} />
       </Center>
     </>
   );
@@ -509,13 +510,12 @@ const S5: React.FC = () => {
           color={C.white}
           words={[
             ["Bagaimana kalau", w(5, 0)],
-            ["biaya itu", w(5, 2)],
           ]}
         />
-        <Line color={C.white} words={[["disiapkan", w(5, 4), "bold"]]} />
-        <HighlightPill text="sejak sekarang?" at={w(5, 5)} clickAt={w(5, 6) + 3} size={84} />
+        <Line color={C.white} words={[["disiapkan", w(5, 2), "bold"]]} />
+        <HighlightPill text="sejak sekarang?" at={w(5, 3)} clickAt={w(5, 4) + 3} size={84} />
       </Center>
-      {f < swap + 8 && <Cursor x={720} y={900} at={w(5, 5) - 2} clickAt={w(5, 6) + 3} hideAt={swap} />}
+      {f < swap + 8 && <Cursor x={720} y={900} at={w(5, 3) - 2} clickAt={w(5, 4) + 3} hideAt={swap} />}
 
       {f >= swap && (
         <>
@@ -590,11 +590,11 @@ const S6: React.FC = () => {
   const up = spring({ frame: f - w(8, 0), fps, config: S.soft });
   const seg = (at: number) => interpolate(f, [at, at + 22], [0, 1], { ...clamp, easing: E.snapOut });
   const s1 = seg(w(8, 2));
-  const s2 = seg(w(8, 8));
+  const s2 = seg(w(8, 7));
   const W = 900;
   const w1 = (W * 603.54) / 2100;
   const w2 = (W * 1482.31) / 2100;
-  const ok = usePop(w(8, 12));
+  const ok = usePop(w(8, 11));
   return (
     <>
       <div style={{ position: "absolute", left: 0, right: 0, top: 440 - up * 160, transform: `scale(${1 - up * 0.3})` }}>
@@ -648,7 +648,7 @@ const S6: React.FC = () => {
       <div style={{ position: "absolute", left: 70, right: 70, top: 1080, display: "flex", flexDirection: "column", gap: 34 }}>
         {[
           { at: w(8, 3), color: C.crimsonBright, title: "Semua premi polis kembali", val: "Rp603,5 jt" },
-          { at: w(8, 9), color: C.maroon, title: "Biaya kesehatan s.d. usia 84", val: "Rp1,48 M" },
+          { at: w(8, 8), color: C.maroon, title: "Biaya kesehatan s.d. usia 84", val: "Rp1,48 M" },
         ].map((r) => (
           <FadeUp key={r.title} at={r.at}>
             <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
@@ -675,11 +675,11 @@ const S6: React.FC = () => {
             boxShadow: "0 14px 40px rgba(145,1,2,.35)",
           }}
         >
-          <Check at={w(8, 12) + 4} size={58} color={C.white} />
+          <Check at={w(8, 11) + 4} size={58} color={C.white} />
           <span style={{ fontFamily: FONT, fontSize: 60, fontWeight: 700, fontStyle: "italic", color: C.white }}>Cukup</span>
         </div>
       </div>
-      <FadeUp at={w(8, 12) + 10} style={{ position: "absolute", left: 0, right: 0, top: 1530, textAlign: "center" }}>
+      <FadeUp at={w(8, 11) + 10} style={{ position: "absolute", left: 0, right: 0, top: 1530, textAlign: "center" }}>
         <div style={{ fontFamily: FONT, fontSize: 32, fontWeight: 500, color: C.mutedGrey }}>masih tersisa ±Rp14 jt</div>
       </FadeUp>
     </>
@@ -744,17 +744,161 @@ const S7: React.FC = () => {
 /* ------------------------------------------------------------------ */
 /* S8 — Penutup                                                         */
 /* ------------------------------------------------------------------ */
+const Bubble: React.FC<{ color: string; size?: number }> = ({ color, size = 64 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path
+      d="M4 5.5 C4 4.7 4.7 4 5.5 4 H18.5 C19.3 4 20 4.7 20 5.5 V14.5 C20 15.3 19.3 16 18.5 16 H10 L6 20 V16 H5.5 C4.7 16 4 15.3 4 14.5 Z"
+      fill="none"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinejoin="round"
+    />
+    <circle cx={8.5} cy={10} r={1.2} fill={color} />
+    <circle cx={12} cy={10} r={1.2} fill={color} />
+    <circle cx={15.5} cy={10} r={1.2} fill={color} />
+  </svg>
+);
+
+const Phone: React.FC<{ color: string; size?: number }> = ({ color, size = 54 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24">
+    <path
+      d="M6.6 3.5 L9.4 3.2 L11 7.6 L9 9.2 C9.9 11.4 12.6 14.1 14.8 15 L16.4 13 L20.8 14.6 L20.5 17.4 C20.4 18.6 19.4 19.5 18.2 19.4 C10.8 18.9 5.1 13.2 4.6 5.8 C4.5 4.6 5.4 3.6 6.6 3.5 Z"
+      fill={color}
+    />
+  </svg>
+);
+
+/** Tombol "Komen HITUNG": outline → diklik → terisi merah */
+const CommentButton: React.FC<{ at: number; clickAt: number }> = ({ at, clickAt }) => {
+  const f = useCurrentFrame();
+  const s = usePop(at);
+  const fill = interpolate(f, [clickAt, clickAt + 7], [0, 1], { ...clamp, easing: E.snapOut });
+  const press = f >= clickAt ? 1 - 0.08 * Math.sin(Math.min(1, (f - clickAt) / 6) * Math.PI) : 1;
+  const ring = interpolate(f, [clickAt, clickAt + 16], [0, 1], clamp);
+  const fg = fill > 0.5 ? C.white : C.brandRed;
+  return (
+    <div style={{ position: "relative", transform: `scale(${s * press})`, opacity: Math.min(1, s * 1.5) }}>
+      {f >= clickAt && ring < 1 && (
+        <div
+          style={{
+            position: "absolute",
+            inset: -20 * ring,
+            borderRadius: 999,
+            border: `4px solid ${C.crimsonBright}`,
+            opacity: 1 - ring,
+          }}
+        />
+      )}
+      <div
+        style={{
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          gap: 20,
+          padding: "26px 60px",
+          borderRadius: 999,
+          border: `4px solid ${C.brandRed}`,
+          background: `linear-gradient(90deg, ${C.brandRed} ${fill * 100}%, ${C.white} ${fill * 100}%)`,
+          boxShadow: fill > 0.5 ? "0 16px 40px rgba(145,1,2,.35)" : "0 10px 24px rgba(0,0,0,.08)",
+        }}
+      >
+        <Bubble color={fg} />
+        <span style={{ fontFamily: FONT, fontSize: 64, fontWeight: 600, color: fg }}>Komen</span>
+        <span style={{ fontFamily: FONT, fontSize: 72, fontWeight: 800, color: fg, letterSpacing: "0.02em" }}>HITUNG</span>
+      </div>
+    </div>
+  );
+};
+
+/** Kartu kontak: muncul saat "Raymon" diucapkan, tetap sampai akhir video */
+const ContactCard: React.FC<{ at: number }> = ({ at }) => {
+  const f = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const s = spring({ frame: f - at, fps, config: S.soft });
+  const sweep = interpolate(f, [at + 6, at + 30], [-0.4, 1.4], clamp);
+  const float = f > at + 20 ? Math.sin((f - at) / 22) * 6 : 0;
+  return (
+    <div
+      style={{
+        width: 900,
+        transform: `translateY(${(1 - s) * 120 + float}px) rotate(${(1 - s) * -6}deg)`,
+        opacity: Math.min(1, s * 1.4),
+        borderRadius: 36,
+        overflow: "hidden",
+        position: "relative",
+        background: `radial-gradient(80% 120% at 20% 0%, ${C.crimsonBright} 0%, ${C.crimson} 45%, ${C.oxblood} 100%)`,
+        boxShadow: `0 30px 70px rgba(82,0,1,.45), 0 0 80px ${C.pinkMist}88`,
+        border: "2px solid rgba(255,255,255,.25)",
+        padding: "46px 56px",
+        display: "flex",
+        alignItems: "center",
+        gap: 34,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          width: 220,
+          left: `${sweep * 100}%`,
+          background: "linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent)",
+          transform: "skewX(-18deg)",
+        }}
+      />
+      <div
+        style={{
+          width: 120,
+          height: 120,
+          borderRadius: "50%",
+          background: `radial-gradient(circle at 35% 30%, #FFFFFF, ${C.offWhite} 55%, ${C.rosyGrey} 100%)`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          boxShadow: "0 10px 24px rgba(0,0,0,.3)",
+        }}
+      >
+        <Phone color={C.brandRed} />
+      </div>
+      <div style={{ position: "relative" }}>
+        <div style={{ fontFamily: FONT, fontSize: 84, fontWeight: 800, color: C.white, letterSpacing: "0.04em", lineHeight: 1 }}>
+          RAYMON
+        </div>
+        <div
+          style={{
+            fontFamily: FONT,
+            fontSize: 56,
+            fontWeight: 600,
+            color: C.white,
+            marginTop: 12,
+            fontVariantNumeric: "tabular-nums",
+            whiteSpace: "nowrap",
+          }}
+        >
+          0812 8909 0202
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const S8: React.FC = () => {
   const f = useCurrentFrame();
   const swap = w(11, 0) - 6;
   const qOut = interpolate(f, [swap, swap + 10], [0, 1], { ...clamp, easing: E.snapOut });
-  const click = w(11, 3) + 4;
+  const cta = w(12, 0) - 6;
+  const qCta = interpolate(f, [cta, cta + 12], [0, 1], { ...clamp, easing: E.snapOut });
+  const hitung = w(12, 1);
   return (
     <>
       <Center
         top={700}
         gap={6}
-        style={{ transform: `translateY(${-qOut * 300}px) scale(${1 - qOut * 0.35})`, opacity: 1 - qOut * 0.55 }}
+        style={{
+          transform: `translateY(${-qOut * 300}px) scale(${1 - qOut * 0.35})`,
+          opacity: (1 - qOut * 0.55) * (1 - qCta),
+        }}
       >
         <Line
           color={C.brandRed}
@@ -767,12 +911,12 @@ const S8: React.FC = () => {
         />
         <Line color={C.brandRed} words={[["tanpa jadi beban.", w(10, 2)]]} />
       </Center>
-      <Center top={980} gap={14}>
+      <Center top={980} gap={14} style={{ transform: `translateY(${-qCta * 560}px) scale(${1 - qCta * 0.25})` }}>
         <Line color={C.charcoal} words={[["Mulai siapkan", w(11, 0)]]} />
         <HighlightPill
           text="dari sekarang"
           at={w(11, 2)}
-          clickAt={click}
+          clickAt={w(11, 3)}
           size={92}
           pill={C.brandRed}
           textBefore={C.brandRed}
@@ -780,7 +924,15 @@ const S8: React.FC = () => {
           dashed
         />
       </Center>
-      <Cursor x={740} y={1180} at={w(11, 2) - 2} clickAt={click} color={C.nearBlack} hideAt={click + 30} />
+
+      {/* CTA */}
+      <div style={{ position: "absolute", left: 0, right: 0, top: 820, display: "flex", justifyContent: "center" }}>
+        <CommentButton at={w(12, 0)} clickAt={hitung} />
+      </div>
+      <Cursor x={760} y={900} at={w(12, 0) + 2} clickAt={hitung} color={C.nearBlack} hideAt={w(12, 4) - 4} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: 1110, display: "flex", justifyContent: "center" }}>
+        <ContactCard at={w(12, 4)} />
+      </div>
     </>
   );
 };
@@ -800,22 +952,22 @@ export const SFX: Sfx[] = [
   { at: w(0, 6) + 4, src: "click", vol: 0.8 },
   { at: w(0, 9), src: "pop", vol: 0.4 },
   { at: w(0, 12), src: "pop", vol: 0.45 },
-  { at: w(0, 15), src: "chime", vol: 0.3 },
+  { at: w(0, 14), src: "chime", vol: 0.3 },
   // S2
   ...ticks(w(1, 1), 30),
   { at: w(1, 1) + 28, src: "boom", vol: 0.35 },
   // S3
-  { at: w(2, 8), src: "rise_soft", vol: 0.3 },
-  ...ticks(w(2, 9), 26),
-  { at: w(3, 10), src: "rise_soft", vol: 0.35 },
-  ...ticks(w(3, 11), 30),
-  { at: w(3, 11) + 28, src: "pop", vol: 0.45 },
+  { at: w(2, 7), src: "rise_soft", vol: 0.3 },
+  ...ticks(w(2, 8), 26),
+  { at: w(3, 9), src: "rise_soft", vol: 0.35 },
+  ...ticks(w(3, 10), 30),
+  { at: w(3, 10) + 28, src: "pop", vol: 0.45 },
   // S4
-  ...ticks(w(4, 1), 40, 0.14),
-  { at: w(4, 1) + 38, src: "chime", vol: 0.35 },
+  ...ticks(w(4, 0), 40, 0.14),
+  { at: w(4, 0) + 38, src: "chime", vol: 0.35 },
   // S5
-  { at: w(5, 5), src: "pop", vol: 0.35 },
-  { at: w(5, 6) + 3, src: "click", vol: 0.8 },
+  { at: w(5, 3), src: "pop", vol: 0.35 },
+  { at: w(5, 4) + 3, src: "click", vol: 0.8 },
   { at: w(6, 2), src: "pop", vol: 0.45 },
   ...[0, 1, 2, 3, 4].map((k) => ({ at: w(6, 5) + k * 6, src: `pop${k}`, vol: 0.4 })),
   // S6
@@ -823,16 +975,23 @@ export const SFX: Sfx[] = [
   ...ticks(w(7, 6), 30),
   { at: w(7, 6), src: "boom", vol: 0.5 },
   { at: w(8, 3) + 6, src: "chime", vol: 0.3 },
-  { at: w(8, 9) + 6, src: "chime", vol: 0.3 },
-  { at: w(8, 12), src: "pop", vol: 0.5 },
-  { at: w(8, 12) + 4, src: "shimmer", vol: 0.35 },
+  { at: w(8, 8) + 6, src: "chime", vol: 0.3 },
+  { at: w(8, 11), src: "pop", vol: 0.5 },
+  { at: w(8, 11) + 4, src: "shimmer", vol: 0.35 },
   // S7
   { at: w(9, 2), src: "pop", vol: 0.45 },
   { at: w(9, 2) + 4, src: "shimmer", vol: 0.3 },
   // S8
   { at: w(11, 2), src: "pop", vol: 0.35 },
-  { at: w(11, 3) + 4, src: "click", vol: 0.85 },
-  { at: w(11, 3) + 6, src: "shimmer", vol: 0.4 },
+  { at: w(11, 3), src: "chime", vol: 0.25 },
+  // CTA
+  { at: w(12, 0) - 3, src: "whoosh", vol: 0.35 },
+  { at: w(12, 0), src: "pop", vol: 0.45 },
+  { at: w(12, 1), src: "click", vol: 0.9 },
+  { at: w(12, 1) + 2, src: "pop1", vol: 0.35 },
+  { at: w(12, 4) - 2, src: "whoosh", vol: 0.4 },
+  { at: w(12, 4) + 6, src: "shimmer", vol: 0.45 },
+  { at: w(12, 4) + 4, src: "boom", vol: 0.25 },
 ];
 
 const Soundtrack: React.FC = () => {
