@@ -4,6 +4,7 @@ import { Main } from "./Main";
 import { StyleDemo } from "./StyleDemo";
 import { AfpVideo, AFP_DURATION } from "./afp/AfpVideo";
 import { AhpVideo, AHP_DURATION } from "./ahp/AhpVideo";
+import { AhpMidnight, MIDNIGHT_DURATION } from "./ahp/AhpMidnight";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -36,6 +37,14 @@ export const RemotionRoot: React.FC = () => {
       id="AhpPensiun"
       component={AhpVideo}
       durationInFrames={AHP_DURATION}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="AhpPensiunMidnight"
+      component={AhpMidnight}
+      durationInFrames={MIDNIGHT_DURATION}
       fps={30}
       width={1080}
       height={1920}
