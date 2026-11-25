@@ -136,7 +136,7 @@ export const Caption: React.FC<{
                   letterSpacing: s === "accent" ? "-0.01em" : 0,
                   opacity: p,
                   transform: `translateY(${(1 - p) * 40 + (w.dy ?? 0)}px) scale(${0.85 + 0.15 * p})`,
-                  filter: `blur(${(1 - p) * 8}px)`,
+                  filter: p < 1 ? `blur(${(1 - p) * 8}px)` : undefined,
                   display: "inline-block",
                   marginRight: "0.26em",
                   textShadow: s === "accent" ? `0 0 40px ${COLORS.blue}66` : undefined,
@@ -193,7 +193,8 @@ export const GlassCard: React.FC<{
         borderRadius: 36,
         padding: 3,
         opacity: pop,
-        transform: `scale(${0.8 + 0.2 * pop}) rotateX(${(1 - pop) * 25}deg)`,
+        // transform 3D hanya selama animasi masuk: rotateX yang tersisa memicu glitch tile di Chromium
+        transform: pop > 0.995 ? undefined : `scale(${0.8 + 0.2 * pop}) rotateX(${(1 - pop) * 25}deg)`,
         background: `linear-gradient(160deg, ${COLORS.glassStroke}, rgba(255,255,255,0.15) 45%, ${COLORS.blueHighlight} 100%)`,
         boxShadow: `0 0 60px ${COLORS.blue}55, -30px 40px 80px ${COLORS.blueDeep}55`,
       }}
@@ -206,7 +207,6 @@ export const GlassCard: React.FC<{
           borderRadius: 33,
           overflow: "hidden",
           background: `radial-gradient(circle at 0% 100%, ${COLORS.blueDeep}cc, transparent 45%), ${COLORS.glassFill}`,
-          backdropFilter: "blur(12px)",
         }}
       >
         {grid && (

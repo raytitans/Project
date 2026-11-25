@@ -183,8 +183,8 @@ const S1: React.FC = () => {
   const lineStart = w(0, 7);
   const lineEnd = w(0, 14);
   const draw = interpolate(f, [lineStart, lineEnd], [0, 1], { ...clamp, easing: E.snapOut });
-  const q = usePop(w(0, 14));
-  const pulse = 1 + 0.03 * Math.sin((f - w(0, 14)) / 6);
+  const q = usePop(w(0, 15));
+  const pulse = 1 + 0.03 * Math.sin((f - w(0, 15)) / 6);
   return (
     <>
       <Center top={420} gap={10}>
@@ -199,10 +199,10 @@ const S1: React.FC = () => {
           color={C.white}
           words={[
             ["Berapa", w(0, 2)],
-            ["total premi", w(0, 3)],
+            ["total biaya", w(0, 3)],
           ]}
         />
-        <HighlightPill text="asuransi kesehatan" at={w(0, 5)} clickAt={w(0, 6) + 4} size={78} />
+        <HighlightPill text="premi kesehatanmu?" at={w(0, 5)} clickAt={w(0, 6) + 4} size={78} />
       </Center>
       <Cursor x={760} y={700} at={w(0, 5) - 2} clickAt={w(0, 6) + 4} hideAt={w(0, 9)} />
 
@@ -956,7 +956,7 @@ export const SFX: Sfx[] = [
   { at: w(0, 6) + 4, src: "click", vol: 0.8 },
   { at: w(0, 9), src: "pop", vol: 0.4 },
   { at: w(0, 12), src: "pop", vol: 0.45 },
-  { at: w(0, 14), src: "chime", vol: 0.3 },
+  { at: w(0, 15), src: "chime", vol: 0.3 },
   // S2
   ...ticks(w(1, 1), 30),
   { at: w(1, 1) + 28, src: "boom", vol: 0.35 },

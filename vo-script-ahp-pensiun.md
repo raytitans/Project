@@ -12,7 +12,7 @@ Sumber angka:
 
 ## Teks VO (untuk ElevenLabs)
 
-[Hook] Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?
+[Hook] Tahukah kamu, berapa total biaya premi kesehatanmu, di usia tiga puluh sampai delapan puluh empat tahun?
 
 [Inti 1] Sekitar dua miliar. Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta. Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar. Hampir tujuh puluh lima persen, justru di usia pensiun.
 

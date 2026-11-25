@@ -7,7 +7,7 @@ export const FPS = 30;
 
 // [teks, mulai (dtk), selesai (dtk)]
 export const PHRASES: [string, number, number][] = [
-  ["Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?", 0.94, 7.62], // P0
+  ["Tahukah kamu, berapa total biaya premi kesehatanmu, di usia tiga puluh sampai delapan puluh empat tahun?", 0.94, 7.62], // P0
   ["Sekitar dua miliar.", 8.3, 9.61], // P1
   ["Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta.", 12.6, 17.28], // P2
   ["Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar.", 19.5, 25.03], // P3
@@ -40,14 +40,18 @@ const estimate = (): VoWord[] => {
   return out;
 };
 
-import REAL from "./vo-words.json";
-const real = REAL as { word: string; start: number; end: number }[];
+import REAL from "./vo-phrases.json";
+type RealPhrase = { text: string; words: { word: string; start: number; end: number }[] };
+const real = REAL as RealPhrase[];
 
 const est = estimate();
-export const WORDS: VoWord[] =
-  real.length === est.length ? est.map((w, i) => ({ ...w, start: real![i].start, end: real![i].end })) : est;
-
-export const HAS_REAL_VO = WORDS !== est;
+/** Pakai timestamp VO asli per frasa bila teks frasa sama; frasa yang diubah memakai perkiraan. */
+export const WORDS: VoWord[] = est.map((v) => {
+  const r = real[v.p];
+  return r && r.text === PHRASES[v.p][0] && r.words[v.k] ? { ...v, start: r.words[v.k].start, end: r.words[v.k].end } : v;
+});
+export const REAL_PHRASES = PHRASES.map(([t], p) => !!real[p] && real[p].text === t);
+export const HAS_REAL_VO = REAL_PHRASES.every(Boolean);
 
 /** frame saat kata ke-k dari frasa p mulai diucapkan */
 export const w = (p: number, k = 0) => {

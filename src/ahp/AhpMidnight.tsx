@@ -4,8 +4,8 @@
  */
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { Background, Caption, Counter, GlassCard, RadialProgress, Word, useTheme } from "../design/components";
-import { COLORS, EASE, FONT, SPRING } from "../design/tokens";
+import { Caption, Counter, GlassCard, RadialProgress, ThemeProvider, Word, useTheme } from "../design/components";
+import { EASE, FONT, GOLD, SPRING } from "../design/tokens";
 import { Check, Cursor } from "./parts";
 import { w } from "./vo";
 
@@ -65,8 +65,10 @@ const Layer: React.FC<{ i: number; disclaimer?: boolean; children: React.ReactNo
   if (f < start || f >= end) return null;
   const pIn = enter ? interpolate(f, [start, start + OVF[enter]], [0, 1], { ...clamp, easing: EASE.inOut }) : 1;
   const pOut = exit ? interpolate(f, [B[i + 1], B[i + 1] + OVF[exit]], [1, 0], { ...clamp, easing: EASE.inOut }) : 1;
-  const a = enter ? tf(enter, pIn, "in") : { t: "", o: 1, f: 0 };
-  const b = exit ? tf(exit, pOut, "out") : { t: "", o: 1, f: 0 };
+  // transform transisi hanya saat transisi berjalan (0<p<1): perspective/3D yang tersisa memicu glitch tile
+  const idle = { t: "", o: 1, f: 0 };
+  const a = enter && pIn < 1 ? tf(enter, pIn, "in") : idle;
+  const b = exit && pOut < 1 ? tf(exit, pOut, "out") : idle;
   const zoom = interpolate(f, [start, end], [1, 1.06]); // drift konstan
   const blur = a.f + b.f;
   return (
@@ -90,13 +92,56 @@ const Disclaimer: React.FC = () => (
       fontFamily: F,
       fontSize: 21,
       fontWeight: 500,
-      color: "rgba(163,167,179,0.75)",
+      color: "rgba(168,176,190,0.75)",
       whiteSpace: "nowrap",
     }}
   >
     Ilustrasi by Raymon, ketentuan sesuai Polis, AXA berizin & diawasi OJK.
   </div>
 );
+
+
+/* Latar design.md (hitam + sinar diagonal) versi ringan: sinar dibuat dari gradien lembut, tanpa filter blur
+   (filter blur 60px pada elemen 3200px membuat Chromium kadang gagal menggambar tile → glitch). */
+const Background: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  const C = useTheme();
+  const f = useCurrentFrame();
+  const drift = -f * 0.25;
+  const streak = (left: number, width: number, opacity: number) => (
+    <div
+      style={{
+        position: "absolute",
+        top: -700,
+        left: left + drift,
+        width: width * 2.2,
+        height: 3300,
+        transform: "rotate(28deg)",
+        background: `linear-gradient(90deg, transparent 0%, ${C.blueDeep}55 25%, ${C.blueDeep} 50%, ${C.blueDeep}55 75%, transparent 100%)`,
+        opacity,
+      }}
+    />
+  );
+  return (
+    <AbsoluteFill style={{ backgroundColor: C.black, overflow: "hidden" }}>
+      {streak(-200, 260, 0.45)}
+      {streak(560, 180, 0.28)}
+      {streak(1250, 320, 0.38)}
+      <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 45%, transparent 35%, rgba(0,0,0,0.85) 100%)" }} />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 3,
+          background: `linear-gradient(90deg, transparent, ${C.blue}, transparent)`,
+          opacity: 0.6,
+        }}
+      />
+      {children}
+    </AbsoluteFill>
+  );
+};
 
 /* ------------------------------------------------------------------ */
 /* Helper kecil                                                         */
@@ -149,7 +194,7 @@ const Fade: React.FC<{ at: number; out?: number; children: React.ReactNode; styl
   const t = interpolate(f, [at, at + 10], [0, 1], { ...clamp, easing: EASE.out });
   const o = out === undefined ? 0 : interpolate(f, [out, out + 10], [0, 1], { ...clamp, easing: EASE.in });
   return (
-    <div style={{ opacity: t * (1 - o), transform: `translateY(${(1 - t) * 30}px)`, filter: `blur(${(1 - t) * 8 + o * 14}px)`, ...style }}>
+    <div style={{ opacity: t * (1 - o), transform: t < 1 ? `translateY(${(1 - t) * 30}px)` : undefined, filter: t < 1 || o > 0 ? `blur(${(1 - t) * 8 + o * 14}px)` : undefined, ...style }}>
       {children}
     </div>
   );
@@ -162,7 +207,7 @@ const S1: React.FC = () => {
   const C = useTheme();
   const f = useCurrentFrame();
   const draw = interpolate(f, [w(0, 7), w(0, 14)], [0, 1], { ...clamp, easing: EASE.out });
-  const pulse = 1 + 0.03 * Math.sin((f - w(0, 14)) / 6);
+  const pulse = 1 + 0.03 * Math.sin((f - w(0, 15)) / 6);
   return (
     <>
       <Abs top={380}>
@@ -172,9 +217,9 @@ const S1: React.FC = () => {
             W("kamu,", w(0, 1), "small"),
             W("berapa", w(0, 2), "normal", true),
             W("total", w(0, 3)),
-            W("premi", w(0, 4)),
-            W("asuransi", w(0, 5), "accent", true),
-            W("kesehatan?", w(0, 6), "accent", true),
+            W("biaya", w(0, 4), "accent", true),
+            W("premi", w(0, 5), "accent"),
+            W("kesehatanmu?", w(0, 6), "normal", true),
           ]}
         />
       </Abs>
@@ -205,7 +250,7 @@ const S1: React.FC = () => {
       </Abs>
       <Abs top={1400}>
         <div style={{ transform: `scale(${pulse})` }}>
-          <Hero at={w(0, 14)} size={180}>
+          <Hero at={w(0, 15)} size={180}>
             Rp ?
           </Hero>
         </div>
@@ -784,7 +829,7 @@ const S8: React.FC = () => {
           top: 700,
           transform: `translateY(${-qOut * 320}px) scale(${1 - qOut * 0.35})`,
           opacity: (1 - qOut * 0.6) * (1 - qCta),
-          filter: `blur(${qOut * 4}px)`,
+          filter: qOut > 0 ? `blur(${qOut * 4}px)` : undefined,
         }}
       >
         <Caption words={[W("Pensiun", w(10, 0)), W("tenang,", w(10, 1), "accent"), W("tanpa", w(10, 2), "small", true), W("jadi", w(10, 3), "small"), W("beban.", w(10, 4), "small")]} />
@@ -795,7 +840,7 @@ const S8: React.FC = () => {
       <Abs top={830}>
         <CommentButton at={w(12, 0)} clickAt={w(12, 1)} />
       </Abs>
-      <Cursor x={760} y={910} at={w(12, 0) + 2} clickAt={w(12, 1)} color={COLORS.white} hideAt={w(12, 4) - 4} />
+      <Cursor x={760} y={910} at={w(12, 0) + 2} clickAt={w(12, 1)} color={GOLD.white} hideAt={w(12, 4) - 4} />
       <Abs top={1100}>
         <ContactCard at={w(12, 4)} />
       </Abs>
@@ -813,11 +858,11 @@ const ticks = (at: number, dur: number, vol = 0.16): Sfx[] =>
 const SFX: Sfx[] = [
   ...TR.map((t, k) => ({ at: B[k + 1] - 3, src: t === "whip" ? "whoosh" : "whoosh_long", vol: 0.45 })),
   // S1
-  { at: w(0, 5), src: "pop", vol: 0.3 },
+  { at: w(0, 4), src: "pop", vol: 0.3 },
   { at: w(0, 7) - 6, src: "shimmer", vol: 0.3 },
   { at: w(0, 9), src: "pop", vol: 0.35 },
   { at: w(0, 12), src: "pop", vol: 0.4 },
-  { at: w(0, 14), src: "chime", vol: 0.3 },
+  { at: w(0, 15), src: "chime", vol: 0.3 },
   // S2
   ...ticks(w(1, 1), 36),
   { at: w(1, 1) + 34, src: "chime", vol: 0.35 },
@@ -881,6 +926,7 @@ const Soundtrack: React.FC = () => {
 };
 
 export const AhpMidnight: React.FC = () => (
+  <ThemeProvider palette={GOLD}>
   <Background>
     <Layer i={0} disclaimer={false}>
       <S1 />
@@ -908,4 +954,5 @@ export const AhpMidnight: React.FC = () => (
     </Layer>
     <Soundtrack />
   </Background>
+  </ThemeProvider>
 );
