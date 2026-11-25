@@ -1,6 +1,6 @@
 [
  {
-  "text": "Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?",
+  "text": "Tahukah kamu, berapa total biaya premi kesehatanmu, di usia tiga puluh sampai delapan puluh empat tahun?",
   "words": [
    {
     "word": "Tahukah",
@@ -23,22 +23,22 @@
     "end": 2.554
    },
    {
-    "word": "premi",
+    "word": "biaya",
     "start": 2.623,
     "end": 2.96
    },
    {
-    "word": "asuransi",
+    "word": "premi",
     "start": 3.03,
     "end": 3.483
    },
    {
-    "word": "kesehatan,",
+    "word": "kesehatanmu,",
     "start": 3.529,
     "end": 4.411
    },
    {
-    "word": "dari",
+    "word": "di",
     "start": 4.736,
     "end": 4.934
    },
@@ -73,11 +73,17 @@
     "end": 7.047
    },
    {
-    "word": "empat?",
+    "word": "empat",
     "start": 7.07,
     "end": 7.616
+   },
+   {
+    "word": "tahun?",
+    "start": 7.616,
+    "end": 7.816
    }
-  ]
+  ],
+  "note": "Teks layar hook baru; audio memakai VO lama ('total premi asuransi kesehatan, dari usia ... empat'). Timestamp dipetakan per posisi kata."
  },
  {
   "text": "Sekitar dua miliar.",

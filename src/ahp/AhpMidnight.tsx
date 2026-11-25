@@ -12,7 +12,7 @@ import { w } from "./vo";
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const F = FONT.family;
 export const MIDNIGHT_DURATION = 75 * 30;
-const withVo = false; // draf tanpa VO
+const withVo = true; // VO Mahaputra (hook memakai rekaman lama)
 
 /* ------------------------------------------------------------------ */
 /* Scene & transisi kamera (design.md §6): tanpa hard cut                */
