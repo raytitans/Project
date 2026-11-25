@@ -16,10 +16,10 @@ export const PHRASES: [string, number, number][] = [
   ["Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.", 36.7, 40.7], // P6
   ["Di usia enam puluh lima, cair dua koma satu miliar.", 42.8, 46.8], // P7
   ["Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.", 48.0, 54.6], // P8
-  ["Dan selama itu, kamu tetap punya proteksi jiwa.", 56.6, 59.8], // P9
-  ["Pensiun tenang, tanpa jadi beban.", 61.2, 63.1], // P10
-  ["Mulai siapkan dari sekarang.", 63.8, 65.5], // P11
-  ["Komen, HITUNG, atau hubungi Raymon.", 66.1, 68.1], // P12 (CTA)
+  ["Dan selama itu, kamu tetap punya proteksi jiwa, hingga tiga koma satu lima miliar.", 55.6, 60.2], // P9
+  ["Pensiun tenang, tanpa jadi beban.", 61.5, 63.3], // P10
+  ["Mulai siapkan dari sekarang.", 63.9, 65.5], // P11
+  ["Komen, HITUNG, atau hubungi Raymon.", 66.0, 67.9], // P12 (CTA)
 ];
 
 export type VoWord = { word: string; start: number; end: number; p: number; k: number };

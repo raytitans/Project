@@ -18,7 +18,7 @@ Sumber angka:
 
 [Inti 2] Bagaimana kalau disiapkan sejak sekarang? Sisihkan sekitar sepuluh juta sebulan, selama lima tahun. Di usia enam puluh lima, cair dua koma satu miliar. Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.
 
-[Inti 3] Dan selama itu, kamu tetap punya proteksi jiwa.
+[Inti 3] Dan selama itu, kamu tetap punya proteksi jiwa, hingga tiga koma satu lima miliar.
 
 [Penutup + CTA] Pensiun tenang, tanpa jadi beban. Mulai siapkan dari sekarang. Komen, HITUNG, atau hubungi Raymon.
 

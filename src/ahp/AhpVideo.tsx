@@ -724,8 +724,17 @@ const S7: React.FC = () => {
           </GlassIcon>
         </Pop>
       </div>
-      <Center top={1170} gap={10}>
+      <Center top={1150} gap={10}>
         <Line color={C.white} words={[["proteksi jiwa", w(9, 6), "italic"]]} style={{ transform: "scale(1.35)" }} />
+        <div style={{ display: "flex", alignItems: "baseline", gap: 22, marginTop: 30 }}>
+          <Line color={C.white} words={[["hingga", w(9, 8), "statement"]]} />
+          <Pop at={w(9, 9)}>
+            <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 130, color: C.white, letterSpacing: "-0.02em", lineHeight: 1, textShadow: "0 10px 30px rgba(0,0,0,.35)", whiteSpace: "nowrap" }}>
+              <Counter to={3.15} dec={2} at={w(9, 9)} dur={30} prefix="Rp" />
+              <span style={{ fontSize: 80 }}> M</span>
+            </div>
+          </Pop>
+        </div>
       </Center>
     </>
   );
@@ -819,10 +828,7 @@ const ContactCard: React.FC<{ at: number }> = ({ at }) => {
         background: `radial-gradient(80% 120% at 20% 0%, ${C.crimsonBright} 0%, ${C.crimson} 45%, ${C.oxblood} 100%)`,
         boxShadow: `0 30px 70px rgba(82,0,1,.45), 0 0 80px ${C.pinkMist}88`,
         border: "2px solid rgba(255,255,255,.25)",
-        padding: "46px 56px",
-        display: "flex",
-        alignItems: "center",
-        gap: 34,
+        padding: "50px 40px 54px",
       }}
     >
       <div
@@ -836,37 +842,45 @@ const ContactCard: React.FC<{ at: number }> = ({ at }) => {
           transform: "skewX(-18deg)",
         }}
       />
-      <div
-        style={{
-          width: 120,
-          height: 120,
-          borderRadius: "50%",
-          background: `radial-gradient(circle at 35% 30%, #FFFFFF, ${C.offWhite} 55%, ${C.rosyGrey} 100%)`,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          boxShadow: "0 10px 24px rgba(0,0,0,.3)",
-        }}
-      >
-        <Phone color={C.brandRed} />
-      </div>
-      <div style={{ position: "relative" }}>
-        <div style={{ fontFamily: FONT, fontSize: 84, fontWeight: 800, color: C.white, letterSpacing: "0.04em", lineHeight: 1 }}>
+      <div style={{ position: "relative", width: "100%", textAlign: "center" }}>
+        <div style={{ fontFamily: FONT, fontSize: 96, fontWeight: 800, color: C.white, letterSpacing: "0.06em", lineHeight: 1 }}>
           RAYMON
         </div>
         <div
           style={{
-            fontFamily: FONT,
-            fontSize: 56,
-            fontWeight: 600,
-            color: C.white,
-            marginTop: 12,
-            fontVariantNumeric: "tabular-nums",
-            whiteSpace: "nowrap",
+            marginTop: 18,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 18,
           }}
         >
-          0812 8909 0202
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: "50%",
+              background: `radial-gradient(circle at 35% 30%, #FFFFFF, ${C.offWhite} 55%, ${C.rosyGrey} 100%)`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 8px 18px rgba(0,0,0,.3)",
+            }}
+          >
+            <Phone color={C.brandRed} size={40} />
+          </div>
+          <div
+            style={{
+              fontFamily: FONT,
+              fontSize: 64,
+              fontWeight: 600,
+              color: C.white,
+              fontVariantNumeric: "tabular-nums",
+              whiteSpace: "nowrap",
+            }}
+          >
+            0812 8909 0202
+          </div>
         </div>
       </div>
     </div>
@@ -971,6 +985,8 @@ export const SFX: Sfx[] = [
   // S7
   { at: w(9, 2), src: "pop", vol: 0.45 },
   { at: w(9, 2) + 4, src: "shimmer", vol: 0.3 },
+  ...ticks(w(9, 9), 30),
+  { at: w(9, 9) + 28, src: "chime", vol: 0.3 },
   // S8
   { at: w(11, 2), src: "pop", vol: 0.35 },
   { at: w(11, 3), src: "chime", vol: 0.25 },
