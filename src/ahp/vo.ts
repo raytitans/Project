@@ -1,25 +1,25 @@
 /**
  * Naskah VO + timing per kata.
- * Saat ini: PERKIRAAN (draf tanpa VO). Setelah VO ElevenLabs dibuat, `vo-words.json`
+ * Sekarang: timing dari VO ElevenLabs (Mahaputra) yang sudah ditata ulang per frasa. Setelah VO ElevenLabs dibuat, `vo-words.json`
  * (hasil transkripsi, urutan kata sama) menggantikan perkiraan ini.
  */
 export const FPS = 30;
 
 // [teks, mulai (dtk), selesai (dtk)]
 export const PHRASES: [string, number, number][] = [
-  ["Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?", 1.0, 7.4], // P0
-  ["Sekitar dua miliar.", 8.3, 9.8], // P1
-  ["Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta.", 12.6, 18.6], // P2
-  ["Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar.", 19.5, 26.0], // P3
-  ["Hampir tujuh puluh lima persen, justru di usia pensiun.", 26.8, 31.0], // P4
-  ["Bagaimana kalau disiapkan sejak sekarang?", 33.2, 35.8], // P5
-  ["Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.", 36.7, 40.7], // P6
-  ["Di usia enam puluh lima, cair dua koma satu miliar.", 42.8, 46.8], // P7
-  ["Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.", 48.0, 54.6], // P8
-  ["Dan selama itu, kamu tetap punya proteksi jiwa, hingga tiga koma satu lima miliar.", 55.6, 60.2], // P9
-  ["Pensiun tenang, tanpa jadi beban.", 61.5, 63.3], // P10
-  ["Mulai siapkan dari sekarang.", 63.9, 65.5], // P11
-  ["Komen, HITUNG, atau hubungi Raymon.", 66.0, 67.9], // P12 (CTA)
+  ["Tahukah kamu, berapa total premi asuransi kesehatan, dari usia tiga puluh sampai delapan puluh empat?", 0.94, 7.62], // P0
+  ["Sekitar dua miliar.", 8.3, 9.61], // P1
+  ["Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta.", 12.6, 17.28], // P2
+  ["Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar.", 19.5, 25.03], // P3
+  ["Hampir tujuh puluh lima persen, justru di usia pensiun.", 26.8, 29.95], // P4
+  ["Bagaimana kalau disiapkan sejak sekarang?", 33.2, 35.38], // P5
+  ["Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.", 36.7, 39.98], // P6
+  ["Di usia enam puluh lima, cair dua koma satu miliar.", 42.8, 46.38], // P7
+  ["Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.", 47.6, 53.15], // P8
+  ["Dan selama itu, kamu tetap punya proteksi jiwa, hingga tiga koma satu lima miliar.", 54.5, 59.76], // P9
+  ["Pensiun tenang, tanpa jadi beban.", 60.5, 63.03], // P10
+  ["Mulai siapkan dari sekarang.", 63.6, 65.28], // P11
+  ["Komen, HITUNG, atau hubungi Raymon.", 65.8, 68.63], // P12 (CTA)
 ];
 
 export type VoWord = { word: string; start: number; end: number; p: number; k: number };
