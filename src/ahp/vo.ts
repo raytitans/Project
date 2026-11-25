@@ -1,7 +1,7 @@
 /**
  * Naskah VO + timing per kata.
- * Sekarang: timing dari VO ElevenLabs (Mahaputra) yang sudah ditata ulang per frasa. Setelah VO ElevenLabs dibuat, `vo-words.json`
- * (hasil transkripsi, urutan kata sama) menggantikan perkiraan ini.
+ * Sekarang: timing dari VO ElevenLabs (Mahaputra) yang sudah ditata ulang per frasa.
+ * vo-phrases.json = timeline 75 dtk, vo-phrases-65.json = timeline 65 dtk.
  */
 export const FPS = 30;
 
@@ -40,27 +40,34 @@ const estimate = (): VoWord[] => {
   return out;
 };
 
-import REAL from "./vo-phrases.json";
+import REAL75 from "./vo-phrases.json";
+import REAL65 from "./vo-phrases-65.json";
 type RealPhrase = { text: string; words: { word: string; start: number; end: number }[] };
-const real = REAL as RealPhrase[];
 
-const est = estimate();
-/** Pakai timestamp VO asli per frasa bila teks frasa sama; frasa yang diubah memakai perkiraan. */
-export const WORDS: VoWord[] = est.map((v) => {
-  const r = real[v.p];
-  return r && r.text === PHRASES[v.p][0] && r.words[v.k] ? { ...v, start: r.words[v.k].start, end: r.words[v.k].end } : v;
-});
-export const REAL_PHRASES = PHRASES.map(([t], p) => !!real[p] && real[p].text === t);
-export const HAS_REAL_VO = REAL_PHRASES.every(Boolean);
+/** Timeline per kata dari VO asli (per frasa bila teks sama; frasa yang diubah memakai perkiraan). */
+const makeTiming = (real: RealPhrase[]) => {
+  const est = estimate();
+  const WORDS: VoWord[] = est.map((v) => {
+    const r = real[v.p];
+    return r && r.text === PHRASES[v.p][0] && r.words[v.k] ? { ...v, start: r.words[v.k].start, end: r.words[v.k].end } : v;
+  });
+  const HAS_REAL_VO = PHRASES.every(([t], p) => !!real[p] && real[p].text === t);
+  /** frame saat kata ke-k dari frasa p mulai diucapkan */
+  const w = (p: number, k = 0) => {
+    const x = WORDS.find((v) => v.p === p && v.k === k);
+    if (!x) throw new Error(`no word p${p} k${k}`);
+    return Math.round(x.start * FPS);
+  };
+  /** frame saat frasa p selesai */
+  const pend = (p: number) => {
+    const xs = WORDS.filter((v) => v.p === p);
+    return Math.round(xs[xs.length - 1].end * FPS);
+  };
+  return { WORDS, HAS_REAL_VO, w, pend };
+};
 
-/** frame saat kata ke-k dari frasa p mulai diucapkan */
-export const w = (p: number, k = 0) => {
-  const x = WORDS.find((v) => v.p === p && v.k === k);
-  if (!x) throw new Error(`no word p${p} k${k}`);
-  return Math.round(x.start * FPS);
-};
-/** frame saat frasa p selesai */
-export const pend = (p: number) => {
-  const xs = WORDS.filter((v) => v.p === p);
-  return Math.round(xs[xs.length - 1].end * FPS);
-};
+/** Timeline 75 dtk (vo.wav) — dipakai versi merah */
+const T75 = makeTiming(REAL75 as RealPhrase[]);
+export const { WORDS, HAS_REAL_VO, w, pend } = T75;
+/** Timeline 65 dtk (vo65.wav, CTA ±5 dtk) — dipakai versi Navy Gold */
+export const T65 = makeTiming(REAL65 as RealPhrase[]);

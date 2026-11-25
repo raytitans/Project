@@ -7,11 +7,12 @@ import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurr
 import { Caption, Counter, GlassCard, RadialProgress, ThemeProvider, Word, useTheme } from "../design/components";
 import { EASE, FONT, GOLD, SPRING } from "../design/tokens";
 import { Check, Cursor } from "./parts";
-import { w } from "./vo";
+import { T65 } from "./vo";
+const { w } = T65; // timeline 65 dtk
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const F = FONT.family;
-export const MIDNIGHT_DURATION = 75 * 30;
+export const MIDNIGHT_DURATION = 65 * 30; // CTA RAYMON ±5 dtk
 const withVo = true; // VO Mahaputra (hook memakai rekaman lama)
 
 /* ------------------------------------------------------------------ */
@@ -915,7 +916,7 @@ const Soundtrack: React.FC = () => {
   return (
     <>
       <Audio src={staticFile("ahp/music.wav")} volume={(f) => interpolate(f, [0, 20, end - 60, end - 5], [0, mv, mv, 0], clamp)} />
-      {withVo && <Audio src={staticFile("ahp/vo.wav")} />}
+      {withVo && <Audio src={staticFile("ahp/vo65.wav")} />}
       {SFX.filter((s) => s.at >= 0 && s.at < end).map((s, i) => (
         <Sequence key={i} from={s.at} durationInFrames={Math.min(90, end - s.at)}>
           <Audio src={staticFile(`ahp/sfx/${s.src}.wav`)} volume={s.vol} />

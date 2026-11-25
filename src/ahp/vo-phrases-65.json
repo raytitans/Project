@@ -1,0 +1,668 @@
+[
+ {
+  "text": "Tahukah kamu, berapa total biaya premi kesehatanmu, di usia tiga puluh sampai delapan puluh empat tahun?",
+  "words": [
+   {
+    "word": "Tahukah",
+    "start": 0.94,
+    "end": 1.393
+   },
+   {
+    "word": "kamu,",
+    "start": 1.439,
+    "end": 1.904
+   },
+   {
+    "word": "berapa",
+    "start": 1.962,
+    "end": 2.264
+   },
+   {
+    "word": "total",
+    "start": 2.298,
+    "end": 2.554
+   },
+   {
+    "word": "biaya",
+    "start": 2.623,
+    "end": 2.96
+   },
+   {
+    "word": "premi",
+    "start": 3.03,
+    "end": 3.483
+   },
+   {
+    "word": "kesehatanmu,",
+    "start": 3.529,
+    "end": 4.411
+   },
+   {
+    "word": "di",
+    "start": 4.736,
+    "end": 4.934
+   },
+   {
+    "word": "usia",
+    "start": 4.98,
+    "end": 5.212
+   },
+   {
+    "word": "tiga",
+    "start": 5.247,
+    "end": 5.48
+   },
+   {
+    "word": "puluh",
+    "start": 5.514,
+    "end": 5.886
+   },
+   {
+    "word": "sampai",
+    "start": 5.932,
+    "end": 6.257
+   },
+   {
+    "word": "delapan",
+    "start": 6.304,
+    "end": 6.699
+   },
+   {
+    "word": "puluh",
+    "start": 6.768,
+    "end": 7.047
+   },
+   {
+    "word": "empat",
+    "start": 7.07,
+    "end": 7.616
+   },
+   {
+    "word": "tahun?",
+    "start": 7.616,
+    "end": 7.816
+   }
+  ],
+  "note": "Teks layar hook baru; audio memakai VO lama ('total premi asuransi kesehatan, dari usia ... empat'). Timestamp dipetakan per posisi kata."
+ },
+ {
+  "text": "Sekitar dua miliar.",
+  "words": [
+   {
+    "word": "Sekitar",
+    "start": 8.738,
+    "end": 9.133
+   },
+   {
+    "word": "dua",
+    "start": 9.191,
+    "end": 9.354
+   },
+   {
+    "word": "miliar.",
+    "start": 9.4,
+    "end": 10.05
+   }
+  ]
+ },
+ {
+  "text": "Usia tiga puluh sampai enam puluh empat, sekitar lima ratus enam puluh juta.",
+  "words": [
+   {
+    "word": "Usia",
+    "start": 11.092,
+    "end": 11.347
+   },
+   {
+    "word": "tiga",
+    "start": 11.382,
+    "end": 11.602
+   },
+   {
+    "word": "puluh",
+    "start": 11.637,
+    "end": 12.02
+   },
+   {
+    "word": "sampai",
+    "start": 12.078,
+    "end": 12.427
+   },
+   {
+    "word": "enam",
+    "start": 12.45,
+    "end": 12.682
+   },
+   {
+    "word": "puluh",
+    "start": 12.729,
+    "end": 12.949
+   },
+   {
+    "word": "empat,",
+    "start": 12.972,
+    "end": 13.506
+   },
+   {
+    "word": "sekitar",
+    "start": 13.715,
+    "end": 14.099
+   },
+   {
+    "word": "lima",
+    "start": 14.145,
+    "end": 14.342
+   },
+   {
+    "word": "ratus",
+    "start": 14.389,
+    "end": 14.691
+   },
+   {
+    "word": "enam",
+    "start": 14.749,
+    "end": 14.958
+   },
+   {
+    "word": "puluh",
+    "start": 15.004,
+    "end": 15.201
+   },
+   {
+    "word": "juta.",
+    "start": 15.236,
+    "end": 15.77
+   }
+  ]
+ },
+ {
+  "text": "Tapi usia enam puluh lima sampai delapan puluh empat, hampir satu koma lima miliar.",
+  "words": [
+   {
+    "word": "Tapi",
+    "start": 17.071,
+    "end": 17.419
+   },
+   {
+    "word": "usia",
+    "start": 17.535,
+    "end": 17.814
+   },
+   {
+    "word": "enam",
+    "start": 17.837,
+    "end": 18.046
+   },
+   {
+    "word": "puluh",
+    "start": 18.092,
+    "end": 18.29
+   },
+   {
+    "word": "lima",
+    "start": 18.313,
+    "end": 18.626
+   },
+   {
+    "word": "sampai",
+    "start": 18.684,
+    "end": 18.974
+   },
+   {
+    "word": "delapan",
+    "start": 19.009,
+    "end": 19.346
+   },
+   {
+    "word": "puluh",
+    "start": 19.404,
+    "end": 19.625
+   },
+   {
+    "word": "empat,",
+    "start": 19.648,
+    "end": 20.159
+   },
+   {
+    "word": "hampir",
+    "start": 20.484,
+    "end": 20.809
+   },
+   {
+    "word": "satu",
+    "start": 20.867,
+    "end": 21.262
+   },
+   {
+    "word": "koma",
+    "start": 21.378,
+    "end": 21.668
+   },
+   {
+    "word": "lima",
+    "start": 21.714,
+    "end": 21.923
+   },
+   {
+    "word": "miliar.",
+    "start": 21.97,
+    "end": 22.597
+   }
+  ]
+ },
+ {
+  "text": "Hampir tujuh puluh lima persen, justru di usia pensiun.",
+  "words": [
+   {
+    "word": "Hampir",
+    "start": 23.538,
+    "end": 23.851
+   },
+   {
+    "word": "tujuh",
+    "start": 23.898,
+    "end": 24.142
+   },
+   {
+    "word": "puluh",
+    "start": 24.165,
+    "end": 24.385
+   },
+   {
+    "word": "lima",
+    "start": 24.42,
+    "end": 24.629
+   },
+   {
+    "word": "persen,",
+    "start": 24.687,
+    "end": 25.128
+   },
+   {
+    "word": "justru",
+    "start": 25.221,
+    "end": 25.512
+   },
+   {
+    "word": "di",
+    "start": 25.546,
+    "end": 25.604
+   },
+   {
+    "word": "usia",
+    "start": 25.651,
+    "end": 25.906
+   },
+   {
+    "word": "pensiun.",
+    "start": 25.953,
+    "end": 26.684
+   }
+  ]
+ },
+ {
+  "text": "Bagaimana kalau disiapkan sejak sekarang?",
+  "words": [
+   {
+    "word": "Bagaimana",
+    "start": 27.997,
+    "end": 28.45
+   },
+   {
+    "word": "kalau",
+    "start": 28.496,
+    "end": 28.647
+   },
+   {
+    "word": "disiapkan",
+    "start": 28.682,
+    "end": 29.193
+   },
+   {
+    "word": "sejak",
+    "start": 29.251,
+    "end": 29.495
+   },
+   {
+    "word": "sekarang?",
+    "start": 29.541,
+    "end": 30.18
+   }
+  ]
+ },
+ {
+  "text": "Sisihkan sekitar sepuluh juta sebulan, selama lima tahun.",
+  "words": [
+   {
+    "word": "Sisihkan",
+    "start": 30.563,
+    "end": 30.992
+   },
+   {
+    "word": "sekitar",
+    "start": 31.05,
+    "end": 31.422
+   },
+   {
+    "word": "sepuluh",
+    "start": 31.503,
+    "end": 31.828
+   },
+   {
+    "word": "juta",
+    "start": 31.851,
+    "end": 32.037
+   },
+   {
+    "word": "sebulan,",
+    "start": 32.084,
+    "end": 32.629
+   },
+   {
+    "word": "selama",
+    "start": 32.699,
+    "end": 33.036
+   },
+   {
+    "word": "lima",
+    "start": 33.07,
+    "end": 33.268
+   },
+   {
+    "word": "tahun.",
+    "start": 33.314,
+    "end": 33.848
+   }
+  ]
+ },
+ {
+  "text": "Di usia enam puluh lima, cair dua koma satu miliar.",
+  "words": [
+   {
+    "word": "Di",
+    "start": 34.559,
+    "end": 34.652
+   },
+   {
+    "word": "usia",
+    "start": 34.687,
+    "end": 34.931
+   },
+   {
+    "word": "enam",
+    "start": 34.977,
+    "end": 35.221
+   },
+   {
+    "word": "puluh",
+    "start": 35.267,
+    "end": 35.453
+   },
+   {
+    "word": "lima,",
+    "start": 35.476,
+    "end": 36.034
+   },
+   {
+    "word": "cair",
+    "start": 36.208,
+    "end": 36.463
+   },
+   {
+    "word": "dua",
+    "start": 36.521,
+    "end": 36.695
+   },
+   {
+    "word": "koma",
+    "start": 36.753,
+    "end": 37.113
+   },
+   {
+    "word": "satu",
+    "start": 37.171,
+    "end": 37.415
+   },
+   {
+    "word": "miliar.",
+    "start": 37.473,
+    "end": 38.135
+   }
+  ]
+ },
+ {
+  "text": "Cukup untuk kembalikan semua premi, dan bayar biaya kesehatan sampai usia delapan puluh empat.",
+  "words": [
+   {
+    "word": "Cukup",
+    "start": 39.232,
+    "end": 39.568
+   },
+   {
+    "word": "untuk",
+    "start": 39.638,
+    "end": 39.835
+   },
+   {
+    "word": "kembalikan",
+    "start": 39.858,
+    "end": 40.346
+   },
+   {
+    "word": "semua",
+    "start": 40.404,
+    "end": 40.66
+   },
+   {
+    "word": "premi,",
+    "start": 40.706,
+    "end": 41.368
+   },
+   {
+    "word": "dan",
+    "start": 41.484,
+    "end": 41.623
+   },
+   {
+    "word": "bayar",
+    "start": 41.693,
+    "end": 41.937
+   },
+   {
+    "word": "biaya",
+    "start": 42.006,
+    "end": 42.227
+   },
+   {
+    "word": "kesehatan",
+    "start": 42.273,
+    "end": 42.738
+   },
+   {
+    "word": "sampai",
+    "start": 42.819,
+    "end": 43.109
+   },
+   {
+    "word": "usia",
+    "start": 43.167,
+    "end": 43.423
+   },
+   {
+    "word": "delapan",
+    "start": 43.469,
+    "end": 43.887
+   },
+   {
+    "word": "puluh",
+    "start": 43.968,
+    "end": 44.235
+   },
+   {
+    "word": "empat.",
+    "start": 44.259,
+    "end": 44.781
+   }
+  ]
+ },
+ {
+  "text": "Dan selama itu, kamu tetap punya proteksi jiwa, hingga tiga koma satu lima miliar.",
+  "words": [
+   {
+    "word": "Dan",
+    "start": 46.233,
+    "end": 46.396
+   },
+   {
+    "word": "selama",
+    "start": 46.442,
+    "end": 46.744
+   },
+   {
+    "word": "itu,",
+    "start": 46.79,
+    "end": 47.162
+   },
+   {
+    "word": "kamu",
+    "start": 47.208,
+    "end": 47.441
+   },
+   {
+    "word": "tetap",
+    "start": 47.475,
+    "end": 47.708
+   },
+   {
+    "word": "punya",
+    "start": 47.731,
+    "end": 47.963
+   },
+   {
+    "word": "proteksi",
+    "start": 48.021,
+    "end": 48.451
+   },
+   {
+    "word": "jiwa,",
+    "start": 48.509,
+    "end": 49.112
+   },
+   {
+    "word": "hingga",
+    "start": 49.287,
+    "end": 49.565
+   },
+   {
+    "word": "tiga",
+    "start": 49.6,
+    "end": 49.809
+   },
+   {
+    "word": "koma",
+    "start": 49.855,
+    "end": 50.215
+   },
+   {
+    "word": "satu",
+    "start": 50.285,
+    "end": 50.54
+   },
+   {
+    "word": "lima",
+    "start": 50.587,
+    "end": 50.784
+   },
+   {
+    "word": "miliar.",
+    "start": 50.831,
+    "end": 51.492
+   }
+  ]
+ },
+ {
+  "text": "Pensiun tenang, tanpa jadi beban.",
+  "words": [
+   {
+    "word": "Pensiun",
+    "start": 52.589,
+    "end": 52.995
+   },
+   {
+    "word": "tenang,",
+    "start": 53.042,
+    "end": 53.669
+   },
+   {
+    "word": "tanpa",
+    "start": 53.843,
+    "end": 54.203
+   },
+   {
+    "word": "jadi",
+    "start": 54.261,
+    "end": 54.446
+   },
+   {
+    "word": "beban.",
+    "start": 54.505,
+    "end": 55.12
+   }
+  ]
+ },
+ {
+  "text": "Mulai siapkan dari sekarang.",
+  "words": [
+   {
+    "word": "Mulai",
+    "start": 55.816,
+    "end": 56.072
+   },
+   {
+    "word": "siapkan",
+    "start": 56.107,
+    "end": 56.594
+   },
+   {
+    "word": "dari",
+    "start": 56.676,
+    "end": 56.873
+   },
+   {
+    "word": "sekarang.",
+    "start": 56.919,
+    "end": 57.5
+   }
+  ]
+ },
+ {
+  "text": "Komen, HITUNG, atau hubungi Raymon.",
+  "words": [
+   {
+    "word": "Komen,",
+    "start": 57.941,
+    "end": 58.533
+   },
+   {
+    "word": "hitung,",
+    "start": 58.603,
+    "end": 59.102
+   },
+   {
+    "word": "atau",
+    "start": 59.218,
+    "end": 59.508
+   },
+   {
+    "word": "hubungi",
+    "start": 59.555,
+    "end": 59.926
+   },
+   {
+    "word": "Raymon.",
+    "start": 59.996,
+    "end": 60.774
+   }
+  ]
+ }
+]
